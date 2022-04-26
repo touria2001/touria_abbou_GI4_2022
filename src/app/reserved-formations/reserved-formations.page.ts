@@ -11,75 +11,71 @@ import { Router } from '@angular/router';
   styleUrls: ['./reserved-formations.page.scss'],
 })
 export class ReservedFormationsPage implements OnInit {
-  tableauFormations = [];  
-  x = {
-    docid : "",
-              nom:"",
-              date: "",
-              description:"",
-              prix:""
-  };
-  noFormation:number=0;
-  formationReserved: any;
+  tableauFormations = [];
+  formationReserved = [];
+
+ 
+  // formationReserved: any;
   constructor(public dataService: DataService,
-    public authService: AuthService, 
+    public authService: AuthService,
     public storage: Storage,
-    public router: Router)
-    
-    {
-     
-     
-      this.storage.get('idCurrentUser').then((val) => {
-        this.authService.getFormationsReserved(val).subscribe(res => {
-          try{
-            this.tableauFormations = res.data()['formations'];
+    public router: Router) {
 
-          }catch(e){
-this.noFormation=1;
-          }
-       if(this.noFormation==0){
-      this.formationReserved = [];
-         this.tableauFormations.map( e => {
+
+    this.storage.get('idCurrentUser').then((val) => {
+      this.authService.getFormationsReserved(val).subscribe(res => {
+        try {
+          this.tableauFormations = res.data()['formations'];
+
+        } catch (e) {
+          console.log(e);
+        }
+
+        
+        
+      
+        this.tableauFormations.map(e => {
+        
+          return this.authService.getFormationById(e).subscribe(r => {
+
+         
+          this.formationReserved.push({
+            docid : e,
+            nom :r.data()['nom'],
+            date : r.data()['date'],
+            description : r.data()['description'],
+            prix :r.data()['prix']
+          })
           
-         return  this.authService.getFormationById(e).subscribe(r => {
 
-        
-              this.x.docid = e;
-              this.x.nom= r.data()['nom'];
-              this.x.date= r.data()['date'];
-              this.x.description=r.data()['description'];
-              this.x.prix= r.data()['prix'];
-              console.log(this.x);
-              this.formationReserved.push(this.x);
 
-             
           });
-        
-
-    
-         });}
 
 
-        
-        })
-      });
-     }
+        });
+
+
+
+      })
+    });
+  }
 
   ngOnInit() {
+
   }
-  async annuler( id:string) {
+  async annuler(id: string) {
     this.storage.get('idCurrentUser').then((val) => {
-      
-   
-      this.dataService.annulerReservation(id,val);
-      
+
+
+      this.dataService.annulerReservation(id, val);
+
     });
     this.router.navigateByUrl('home');
 
-    
-  
- 
 
-      
+
+
+
+
   }
 }
