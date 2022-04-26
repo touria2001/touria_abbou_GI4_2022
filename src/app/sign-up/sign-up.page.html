@@ -1,0 +1,35 @@
+
+
+<ion-content >
+  <div class="content">
+    <div class="header">
+      <p class="titre">Register</p>
+      <p class="petitTitre">bienvenue mon cher étudient soyez heureux  </p>
+    </div>
+    <div class="register">
+      <div>
+        <form [formGroup]="infoGeneral" (ngSubmit)="signup()">
+  
+      <input type="text" placeholder="Prenom" formControlName="prenom">
+      <input type="text" placeholder="Nom"  formControlName="nom">
+      <input type="email" placeholder="Email" formControlName="email">
+      <ion-note slot="error" *ngIf="(email.dirty || email.touched) && email.errors"><br>Email n'est pas valide</ion-note>
+  
+      <input type="text" placeholder="Etablissement" formControlName="etablissement">
+      <input type="text" placeholder="Specialite" formControlName="specialite">
+      <input type="password" placeholder="Mot de passe" formControlName="password" >
+      <ion-note slot="error" *ngIf="(password.dirty || password.touched) && password.errors"><br>Le mot de passe doit contenir au minimum 6 caractères</ion-note>
+  
+      <input type="submit" [disabled]="!infoGeneral.valid" value="S'inscrire" > 
+      <!-- <ion-button expand="full" type="submit" [disabled]="!infoGeneral.valid">S'inscrir</ion-button> -->
+  
+      </form>
+    </div>
+  <div >
+    <p (click)="login()" class="login">je n'ai pas un compte</p>
+  </div>
+  </div>
+  </div>
+  
+
+</ion-content>

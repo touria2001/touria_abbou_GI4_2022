@@ -1,0 +1,42 @@
+
+
+
+<ion-content >
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <div class="content">
+    <div class="header">
+      <img src="../../assets/icon/logo.png"   alt="">
+      <p class="titre">Se Connecter</p>
+      <p class="petitTitre">bienvenue mon cher étudiant soyez heureux  </p>
+    </div>
+    <div class="register">
+      <div>
+        <div class="welcomeDev">
+        <p class="welcome">Welcome back </p>
+        <i class="fa fa-user-circle-o"></i>
+      </div>
+      <form [formGroup]="credentials" (ngSubmit)="login()">
+      <input type="email" placeholder="Email" formControlName="email">
+      <ion-note slot="error" *ngIf="(email.dirty || email.touched) && email.errors"><br>Email n'est pas valide</ion-note>
+  
+      <input type="password" placeholder="Mot de passe" formControlName="password">
+      <ion-note slot="error" *ngIf="(password.dirty || password.touched) && password.errors"><br>Le mot de passe doit contenir au minimum 6 caractères</ion-note>
+  
+      <p class="password">mot de passe oublié</p>
+      <!-- <input type="submit" value="S'inscrir"> -->
+       <!-- <ion-button expand="full" type="submit" [disabled]="!credentials.valid">S'inscrir</ion-button>  -->
+      <input type="submit" [disabled]="!credentials.valid" value="Se Connecter" > 
+  
+      </form>
+    </div>
+  <div>
+    <p (click)='signup()' class="login">Je ne suis pas encore inscrit</p>
+   
+  </div>
+  </div>
+  </div>
+  
+    
+  
+</ion-content>

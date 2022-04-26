@@ -1,0 +1,19 @@
+
+
+<ion-content>
+  <div class="content" *ngFor="let item of formationReserved; ">
+
+    <div class="formationBox">
+      <div class="description">
+      <p class="name">{{item.nom}}</p>
+      <p class="description2">{{item.description}} </p>
+    </div>
+      <div (click)="annuler( item.docid)" class="voirPlus">
+       <p >annuler</p>
+      </div>
+    </div>
+    
+    
+  </div>
+  
+</ion-content>

@@ -1,0 +1,26 @@
+
+<ion-content>
+  <div class="content">
+    <div class="header">
+      <p class="titre">Ajouter une formation</p>
+      <!-- <p class="petitTitre">malika  malika touria mamagd refsv fhhv malika touria mamagd refsv fhhv  </p> -->
+    </div>
+    <div class="register">
+      <div>
+        <form [formGroup]="infoGeneral" (ngSubmit)="add()">
+          <label for="">Nom</label>
+      <input type="text" formControlName="nom">
+      <label for="">Prix</label>
+      <input type="text" formControlName="prix" >
+      <label for="">Date</label>
+      <input type="text" formControlName="date">
+      <label for="">Description</label>
+     <textarea name="" id="" cols="30" rows="6" formControlName="description"></textarea>
+      <input type="submit" value="Ajouter">
+    </form>
+    </div>
+  
+  </div>
+  </div>
+  
+</ion-content>

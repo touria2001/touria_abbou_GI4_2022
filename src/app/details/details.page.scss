@@ -1,0 +1,62 @@
+.info p{
+
+  font-size: 17px;
+  font-family: Bahnschrift;
+   // font-weight: 600;
+}
+span{
+  font-size: 18px;
+  font-weight: 700;
+  margin-right: 7px;
+}
+.info{
+
+  margin: 20px 5%;
+  padding: 5px 20px;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.info button{
+  display: block;
+  text-align: center;
+  margin: auto;
+  font-size: 16px;
+  width: 50%;
+  padding: 10px;
+  background-color: #0e0d0d;
+  color: white;
+  border-radius: 10px;
+  font-weight: 600;
+}
+.header{
+
+  padding-left: 20px;
+   margin-top: 10%;
+   margin-bottom: 20px;
+ 
+}
+.content
+{
+background-color:#ffb901;
+display: flex;
+flex-direction: column;
+}
+.boxInfo
+{
+background-color: white;
+border-top-right-radius: 30px;
+border-top-left-radius: 30px;
+height: 100vh;
+padding-top: 20px;
+
+}
+.titre{
+  font-size: 18px;
+  font-weight: 1000;
+  
+  }
+  .titre2{
+      font-size: 17px;
+      font-weight: 600;
+      margin-left: 10%;
+  }

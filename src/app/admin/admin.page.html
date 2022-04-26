@@ -1,0 +1,34 @@
+<ion-content [fullscreen]="true">
+ 
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<div class="content">
+  <div class="header">
+<p>Page Admin</p>
+  </div>
+  <div  class="items">
+  <div *ngFor="let item of listFormations;" class="itemFlex">
+    <div class="itemFlex1">
+      <p class="nom"> {{item.nom}}</p>
+      <p class="date">{{item.date}}</p>
+      <p class="prix">{{item.prix }}$</p>
+    </div>
+    <div class="itemFlex2" >
+      <i class="material-icons" (click)="delete(item.key,item.docid)">delete_forever</i>
+      <div (click)="update(item.docid)" class="modifier">
+        <p>Modifier</p>
+      </div>
+      
+    </div>
+
+  </div>
+  
+  </div>
+</div>
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button (click)="add()">
+    <ion-icon name="add" ></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+</ion-content>

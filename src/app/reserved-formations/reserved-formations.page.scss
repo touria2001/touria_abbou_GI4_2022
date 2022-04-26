@@ -1,0 +1,47 @@
+.formationBox{
+    display: flex;
+    //background-color: aqua;
+  
+    height: 100px;
+    border-radius: 10px;
+    padding-left: 20px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+   // margin:10px 0;
+    margin: 10px 5%;
+  }
+  .description{
+    display: flex;
+   flex-direction: column;
+  width: 80%;
+  }
+  .name{
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 0;
+  }
+  .description2{
+    font-size: 14px;
+    font-weight: 600;
+    color: rgb(86, 84, 84);
+    overflow: hidden;
+    max-height: 18px;
+  }
+  
+  .voirPlus{
+  
+    background-color: beige;
+    background-color:#ffb901;
+    color: white;
+    background-color: rgb(78, 78, 78);
+    height: 100px;
+    width: 35%;
+    display: flex;
+  border-bottom-left-radius: 80%;
+  }
+  .voirPlus p{
+  margin: auto;
+  font-size: 15px;
+  font-weight: 700;
+  }
+  

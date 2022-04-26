@@ -1,0 +1,18 @@
+
+  <div class="content">
+    <div class="header">
+     <p class="titre">formation</p> 
+    
+    </div>
+   
+    <div class="boxInfo">
+      <p class="titre2">les details de la formation</p>
+    <div class="info"  *ngIf="voirPlus">
+  <p><span>Nom : </span> {{voirPlus.nom }}</p>
+  <p><span>Prix : </span> {{voirPlus.prix}}$</p>
+  <p><span>Date : </span> {{voirPlus.date}}</p>
+  <p style="line-height: 1.5;"><span>Description : </span> {{voirPlus.description}}</p>
+<button (click)='reserve(data)'>Reserver</button>
+</div>
+    </div>
+</div>
